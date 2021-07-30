@@ -1,0 +1,457 @@
+2021-05-22 06:13:19 pid:1 Error: Call to undefined method Webman\Route::disableDefaultRoute() in D:\www\test\webman\config\route.php:23
+Stack trace:
+#0 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(272): require_once()
+#1 D:\www\test\webman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#2 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(274): FastRoute\simpleDispatcher(Object(Closure))
+#3 D:\www\test\webman\start.php(67): Webman\Route::load('D:\\www\\test\\web...')
+#4 D:\www\test\webman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#5 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1418): Workerman\Worker->run()
+#6 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1361): Workerman\Worker::forkWorkersForWindows()
+#7 D:\www\test\webman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#8 D:\www\test\webman\start.php(138): Workerman\Worker::runAll()
+#9 {main}
+2021-05-22 06:13:20 pid:1 Worker process terminated
+2021-05-22 06:46:13 pid:1 ParseError: syntax error, unexpected end of file in D:\www\test\webman\config\route.php:24
+Stack trace:
+#0 D:\www\test\webman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#1 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#2 D:\www\test\webman\start.php(67): Webman\Route::load('D:\\www\\test\\web...')
+#3 D:\www\test\webman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#4 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#5 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#6 D:\www\test\webman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#7 D:\www\test\webman\start.php(138): Workerman\Worker::runAll()
+#8 {main}
+2021-05-22 06:46:14 pid:1 Worker process terminated
+2021-05-22 06:57:27 pid:1 ParseError: syntax error, unexpected end of file in D:\www\test\webman\config\route.php:28
+Stack trace:
+#0 D:\www\test\webman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#1 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#2 D:\www\test\webman\start.php(67): Webman\Route::load('D:\\www\\test\\web...')
+#3 D:\www\test\webman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#4 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#5 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#6 D:\www\test\webman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#7 D:\www\test\webman\start.php(138): Workerman\Worker::runAll()
+#8 {main}
+2021-05-22 06:57:28 pid:1 Worker process terminated
+2021-05-22 07:37:57 pid:1 ParseError: syntax error, unexpected '@', expecting function (T_FUNCTION) or const (T_CONST) in D:\www\test\webman\app\module\bbs\index\Bbs.php:9
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\module\\bbs\\...')
+#1 [internal function]: spl_autoload_call('app\\module\\bbs\\...')
+#2 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\module\\bbs\\...')
+#3 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/bbs', Array)
+#4 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/bbs', 'app\\module\\bbs\\...')
+#5 D:\www\test\webman\config\route.php(23): Webman\Route::any('/bbs', 'app\\module\\bbs\\...')
+#6 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\test\\web...')
+#7 D:\www\test\webman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#8 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#9 D:\www\test\webman\start.php(67): Webman\Route::load('D:\\www\\test\\web...')
+#10 D:\www\test\webman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#11 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#12 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#13 D:\www\test\webman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#14 D:\www\test\webman\start.php(138): Workerman\Worker::runAll()
+#15 {main}
+2021-05-22 07:37:58 pid:1 Worker process terminated
+2021-05-22 07:42:42 pid:1 ParseError: syntax error, unexpected '@', expecting ';' or ',' in D:\www\test\webman\config\route.php:36
+Stack trace:
+#0 D:\www\test\webman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#1 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#2 D:\www\test\webman\start.php(67): Webman\Route::load('D:\\www\\test\\web...')
+#3 D:\www\test\webman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#4 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#5 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#6 D:\www\test\webman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#7 D:\www\test\webman\start.php(138): Workerman\Worker::runAll()
+#8 {main}
+2021-05-22 07:42:43 pid:1 Worker process terminated
+2021-05-22 07:49:46 pid:1 ParseError: syntax error, unexpected '}', expecting ')' in D:\www\test\webman\config\route.php:38
+Stack trace:
+#0 D:\www\test\webman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#1 D:\www\test\webman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#2 D:\www\test\webman\start.php(67): Webman\Route::load('D:\\www\\test\\web...')
+#3 D:\www\test\webman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#4 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#5 D:\www\test\webman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#6 D:\www\test\webman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#7 D:\www\test\webman\start.php(138): Workerman\Worker::runAll()
+#8 {main}
+2021-05-22 07:49:47 pid:1 Worker process terminated
+2021-05-24 20:21:39 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Variadic parameter cannot have a default value in D:\www\test\webman\app\model\User.php on line 6"
+2021-06-02 12:39:00 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot use app\module\bbs\model as model because the name is already in use in D:\www\test\webman\ext\M2.php on line 4"
+2021-07-24 13:22:15 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class app\forum\index\Forum, because the name is already in use in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\ForumGroup.php on line 7"
+2021-07-24 13:22:50 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class app\forum\index\ForumGroup, because the name is already in use in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\ForumGroup.php on line 7"
+2021-07-24 13:22:52 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class app\forum\index\ForumGroup, because the name is already in use in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\ForumGroup.php on line 7"
+2021-07-24 13:22:59 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class app\forum\index\ForumGroup, because the name is already in use in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\ForumGroup.php on line 7"
+2021-07-24 13:23:01 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class app\forum\index\ForumGroup, because the name is already in use in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\ForumGroup.php on line 7"
+2021-07-24 13:23:36 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class app\forum\index\ForumGroup, because the name is already in use in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\ForumGroup.php on line 7"
+2021-07-24 13:25:00 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class app\forum\index\ForumGroup, because the name is already in use in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\ForumGroup.php on line 7"
+2021-07-24 13:25:53 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class app\forum\index\ForumGroup, because the name is already in use in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\ForumGroup.php on line 7"
+2021-07-24 13:26:31 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class app\forum\index\ForumGroup, because the name is already in use in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\ForumGroup.php on line 7"
+2021-07-24 14:57:34 pid:1 ParseError: syntax error, unexpected '}' in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\Forum.php:58
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\forum\\admin...')
+#1 [internal function]: spl_autoload_call('app\\forum\\admin...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\forum\\admin...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/admin/forum/in...', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/admin/forum/in...', 'app\\forum\\admin...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/admin/forum/in...', 'app\\forum\\admin...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(79): RouteModuleDir('forum')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-24 14:57:35 pid:1 Worker process terminated
+2021-07-24 15:22:27 pid:1 ParseError: syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\Forum.php:17
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\forum\\admin...')
+#1 [internal function]: spl_autoload_call('app\\forum\\admin...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\forum\\admin...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/admin/forum/in...', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/admin/forum/in...', 'app\\forum\\admin...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/admin/forum/in...', 'app\\forum\\admin...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(79): RouteModuleDir('forum')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-24 15:22:28 pid:1 Worker process terminated
+2021-07-24 15:22:42 pid:1 ParseError: syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\www\Git\mmLang\php\mmLangWebman\app\forum\admin\Forum.php:17
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\forum\\admin...')
+#1 [internal function]: spl_autoload_call('app\\forum\\admin...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\forum\\admin...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/admin/forum/in...', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/admin/forum/in...', 'app\\forum\\admin...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/admin/forum/in...', 'app\\forum\\admin...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(79): RouteModuleDir('forum')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-24 15:22:43 pid:1 Worker process terminated
+2021-07-24 16:01:19 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\Forum.php on line 3"
+2021-07-24 16:02:16 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\Forum.php on line 3"
+2021-07-24 16:02:50 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\Forum.php on line 3"
+2021-07-24 16:04:26 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\Forum.php on line 3"
+2021-07-24 16:05:01 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\Forum.php on line 3"
+2021-07-24 16:06:24 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\Forum.php on line 3"
+2021-07-28 07:45:41 pid:1 ParseError: syntax error, unexpected ':' in D:\www\Git\mmLang\php\mmLangWebman\app\index\index\Login.php:25
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\index\\index...')
+#1 [internal function]: spl_autoload_call('app\\index\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\index\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/login/index', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/login/index', 'app\\index\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/login/index', 'app\\index\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(76): RouteModuleDir('index')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 07:45:42 pid:1 Worker process terminated
+2021-07-28 13:05:35 pid:1 ParseError: syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST) in D:\www\Git\mmLang\php\mmLangWebman\app\index\index\Ad.php:86
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\index\\index...')
+#1 [internal function]: spl_autoload_call('app\\index\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\index\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/ad/index', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/ad/index', 'app\\index\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/ad/index', 'app\\index\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(76): RouteModuleDir('index')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 13:05:36 pid:1 Worker process terminated
+2021-07-28 13:05:50 pid:1 ParseError: syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST) in D:\www\Git\mmLang\php\mmLangWebman\app\index\index\Ad.php:86
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\index\\index...')
+#1 [internal function]: spl_autoload_call('app\\index\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\index\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/ad/index', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/ad/index', 'app\\index\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/ad/index', 'app\\index\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(76): RouteModuleDir('index')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 13:05:51 pid:1 Worker process terminated
+2021-07-28 13:06:28 pid:1 ParseError: syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST) in D:\www\Git\mmLang\php\mmLangWebman\app\index\index\AdTags.php:86
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\index\\index...')
+#1 [internal function]: spl_autoload_call('app\\index\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\index\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/ad_tags/index', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/ad_tags/index', 'app\\index\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/ad_tags/index', 'app\\index\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(76): RouteModuleDir('index')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 13:06:29 pid:1 Worker process terminated
+2021-07-28 13:06:50 pid:1 ParseError: syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST) in D:\www\Git\mmLang\php\mmLangWebman\app\index\index\AdTags.php:86
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\index\\index...')
+#1 [internal function]: spl_autoload_call('app\\index\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\index\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/ad_tags/index', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/ad_tags/index', 'app\\index\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/ad_tags/index', 'app\\index\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(76): RouteModuleDir('index')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 13:06:51 pid:1 Worker process terminated
+2021-07-28 13:58:44 pid:1 ParseError: syntax error, unexpected '$list' (T_VARIABLE) in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\Forum_home.php:14
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\forum\\index...')
+#1 [internal function]: spl_autoload_call('app\\forum\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\forum\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/forum_home/ind...', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/forum_home/ind...', 'app\\forum\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/forum_home/ind...', 'app\\forum\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(77): RouteModuleDir('forum')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 13:58:45 pid:1 Worker process terminated
+2021-07-28 14:37:45 pid:1 ParseError: syntax error, unexpected '"' in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\ForumSearch.php:14
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\forum\\index...')
+#1 [internal function]: spl_autoload_call('app\\forum\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\forum\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/forum_search/i...', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/forum_search/i...', 'app\\forum\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/forum_search/i...', 'app\\forum\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(77): RouteModuleDir('forum')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 14:37:46 pid:1 Worker process terminated
+2021-07-28 14:37:56 pid:1 ParseError: syntax error, unexpected '"' in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\ForumSearch.php:14
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\forum\\index...')
+#1 [internal function]: spl_autoload_call('app\\forum\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\forum\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/forum_search/i...', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/forum_search/i...', 'app\\forum\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/forum_search/i...', 'app\\forum\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(77): RouteModuleDir('forum')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 14:37:57 pid:1 Worker process terminated
+2021-07-28 14:53:05 pid:1 ParseError: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting '[' in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\Forum.php:170
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\forum\\index...')
+#1 [internal function]: spl_autoload_call('app\\forum\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\forum\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/forum/index', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/forum/index', 'app\\forum\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/forum/index', 'app\\forum\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(77): RouteModuleDir('forum')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 14:53:06 pid:1 Worker process terminated
+2021-07-28 19:25:19 pid:1 ParseError: syntax error, unexpected ')', expecting '[' in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\ForumFav.php:27
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\forum\\index...')
+#1 [internal function]: spl_autoload_call('app\\forum\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\forum\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/forum_fav/inde...', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/forum_fav/inde...', 'app\\forum\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/forum_fav/inde...', 'app\\forum\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(77): RouteModuleDir('forum')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 19:25:20 pid:1 Worker process terminated
+2021-07-28 19:27:55 pid:1 ParseError: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting '[' in D:\www\Git\mmLang\php\mmLangWebman\app\forum\index\ForumFav.php:27
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\forum\\index...')
+#1 [internal function]: spl_autoload_call('app\\forum\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\forum\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/forum_fav/inde...', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/forum_fav/inde...', 'app\\forum\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/forum_fav/inde...', 'app\\forum\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(77): RouteModuleDir('forum')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 19:27:56 pid:1 Worker process terminated
+2021-07-28 23:18:06 pid:1 ParseError: syntax error, unexpected '$redata' (T_VARIABLE) in D:\www\Git\mmLang\php\mmLangWebman\app\index\index\User.php:159
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\index\\index...')
+#1 [internal function]: spl_autoload_call('app\\index\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\index\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/user/index', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/user/index', 'app\\index\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/user/index', 'app\\index\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(76): RouteModuleDir('index')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 23:18:07 pid:1 Worker process terminated
+2021-07-28 23:27:27 pid:1 ParseError: syntax error, unexpected '=' in D:\www\Git\mmLang\php\mmLangWebman\app\index\index\Register.php:29
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\index\\index...')
+#1 [internal function]: spl_autoload_call('app\\index\\index...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\index\\index...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/register/index', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/register/index', 'app\\index\\index...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/register/index', 'app\\index\\index...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(76): RouteModuleDir('index')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-28 23:27:28 pid:1 Worker process terminated
+2021-07-29 08:08:34 pid:1 ParseError: syntax error, unexpected ';', expecting ']' in D:\www\Git\mmLang\php\mmLangWebman\app\index\admin\Ad.php:24
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\index\\admin...')
+#1 [internal function]: spl_autoload_call('app\\index\\admin...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\index\\admin...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/admin/ad/index', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/admin/ad/index', 'app\\index\\admin...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/admin/ad/index', 'app\\index\\admin...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(76): RouteModuleDir('index')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-29 08:08:35 pid:1 Worker process terminated
+2021-07-29 12:52:10 pid:1 ParseError: syntax error, unexpected ':' in D:\www\Git\mmLang\php\mmLangWebman\app\index\admin\Article.php:29
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('app\\index\\admin...')
+#1 [internal function]: spl_autoload_call('app\\index\\admin...')
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(255): class_exists('app\\index\\admin...')
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(278): Webman\Route::convertToCallable('/admin/article/...', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/admin/article/...', 'app\\index\\admin...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(52): Webman\Route::any('/admin/article/...', 'app\\index\\admin...')
+#6 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(76): RouteModuleDir('index')
+#7 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#11 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#16 {main}
+2021-07-29 12:52:11 pid:1 Worker process terminated
