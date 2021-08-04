@@ -1,7 +1,7 @@
 <?php
 namespace app\forum\index;
 use support\Request;
-use support\DB;
+use support\Db;
 use ext\DBS;
 use ext\UserAccess;
 use ext\Help;

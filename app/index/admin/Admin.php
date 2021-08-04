@@ -1,7 +1,7 @@
 <?php
 namespace app\index\admin;
 use support\Request;
-use support\DB;
+use support\Db;
 use ext\DBS;
 use ext\UserAccess;
 use ext\Help;
@@ -14,7 +14,7 @@ class Admin
 	    $start=$request->get("per_page");
         $limit=12;
         $fm=DBS::MM("index","Admin");
-        $where=" 1 ";
+        $where=" 1 "; 
 		$list=$fm
                 ->offset($start)
                 ->limit($limit)

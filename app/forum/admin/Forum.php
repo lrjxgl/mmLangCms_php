@@ -1,7 +1,7 @@
 <?php
 namespace app\forum\admin;
 use support\Request;
-use support\DB;
+use support\Db;
 use ext\DBS;
 class Forum
 { 

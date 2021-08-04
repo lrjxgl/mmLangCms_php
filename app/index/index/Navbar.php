@@ -1,7 +1,7 @@
 <?php
 namespace app\index\index;
 use support\Request;
-use support\DB;
+use support\Db;
 use ext\DBS;
 class Navbar
 { 

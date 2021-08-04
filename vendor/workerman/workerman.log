@@ -455,3 +455,28 @@ Stack trace:
 #15 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
 #16 {main}
 2021-07-29 12:52:11 pid:1 Worker process terminated
+2021-07-30 10:33:05 pid:1 FastRoute\BadRouteException: Cannot register two routes matching "/admin/admin/index" for method "GET" in D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\DataGenerator\RegexBasedAbstract.php:86
+Stack trace:
+#0 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\DataGenerator\RegexBasedAbstract.php(30): FastRoute\DataGenerator\RegexBasedAbstract->addStaticRoute('GET', Array, Array)
+#1 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\RouteCollector.php(44): FastRoute\DataGenerator\RegexBasedAbstract->addRoute('GET', Array, Array)
+#2 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(279): FastRoute\RouteCollector->addRoute(Array, '/admin/admin/in...', Array)
+#3 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(149): Webman\Route::addRoute(Array, '/index', Array)
+#4 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(66): Webman\Route::any('/index', 'app\\index\\admin...')
+#5 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\RouteCollector.php(61): {closure}(Object(FastRoute\RouteCollector))
+#6 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(172): FastRoute\RouteCollector->addGroup('/admin', Object(Closure))
+#7 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(68): Webman\Route::group('/admin', Object(Closure))
+#8 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\RouteCollector.php(61): {closure}(Object(FastRoute\RouteCollector))
+#9 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(172): FastRoute\RouteCollector->addGroup('/admin', Object(Closure))
+#10 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(71): Webman\Route::group('/admin', Object(Closure))
+#11 D:\www\Git\mmLang\php\mmLangWebman\config\route.php(94): RouteModuleDir('index')
+#12 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(295): require_once('D:\\www\\Git\\mmLa...')
+#13 D:\www\Git\mmLang\php\mmLangWebman\vendor\nikic\fast-route\src\functions.php(25): Webman\Route::Webman\{closure}(Object(FastRoute\RouteCollector))
+#14 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\webman-framework\src\Route.php(297): FastRoute\simpleDispatcher(Object(Closure))
+#15 D:\www\Git\mmLang\php\mmLangWebman\start.php(67): Webman\Route::load('D:\\www\\Git\\mmLa...')
+#16 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(2415): {closure}(Object(Workerman\Worker))
+#17 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1417): Workerman\Worker->run()
+#18 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(1360): Workerman\Worker::forkWorkersForWindows()
+#19 D:\www\Git\mmLang\php\mmLangWebman\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#20 D:\www\Git\mmLang\php\mmLangWebman\start.php(138): Workerman\Worker::runAll()
+#21 {main}
+2021-07-30 10:33:06 pid:1 Worker process terminated

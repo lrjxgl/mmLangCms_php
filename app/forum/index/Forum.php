@@ -1,7 +1,7 @@
 <?php
 namespace app\forum\index;
 use support\Request;
-use support\DB;
+use support\Db;
 use ext\DBS;
 use ext\UserAccess;
 use ext\Help;
@@ -10,10 +10,12 @@ class Forum
 	/*@@index@@*/    
     public function index(Request $request)
     {
-        $navList=DBS::MM("index","ad")->listByNo("uniapp-forum-nav",123);
-        $flashList=DBS::MM("index","ad")->listByNo("uniapp-forum-index",4);
-        $adList=DBS::MM("index","ad")->listByNo("uniapp-forum-ad",3);
-        $recList=DBS::MM("forum","forumTags")->GetForumByKey("index"); 
+        //file_put_contents("log.txt","forum"); 
+        $fmAd=DBS::MM("index","ad");
+        $navList=$fmAd->listByNo("uniapp-forum-nav",123);
+        $flashList=$fmAd->listByNo("uniapp-forum-index",4);
+        $adList=$fmAd->listByNo("uniapp-forum-ad",3);
+        $recList=DBS::MM("forum","forumTags")->GetForumByKey("index");  
         $redata=[
             "error" => 0, 
             "message" => "ok",

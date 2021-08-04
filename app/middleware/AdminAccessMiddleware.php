@@ -13,9 +13,13 @@ class AdminAccessMiddleware implements MiddlewareInterface
     {
         $path=$request->path();
         $arr=explode("/",$path);
+        if($arr[1]!="admin"){
+            return $next($request);
+        }
         $m=$arr[2];
         $a=$arr[3];
         $p=$m.".".$a;
+        echo $p;
         if(!in_array($m,["login"])){
             $adminid=AdminAccess::checkAccess($request);
             if(!$adminid){
@@ -26,7 +30,7 @@ class AdminAccessMiddleware implements MiddlewareInterface
                     
                 ]);
                 
-            }
+            } 
             $admin=DBS::MM("index","admin")->where("id",$adminid)->first();
             if($admin->isfounder!=1 ){
                 $adminGroup=DBS::MM("index","adminGroup")->where("id",$admin->group_id)->first();

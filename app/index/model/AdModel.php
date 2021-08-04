@@ -37,10 +37,10 @@ class AdModel extends Model{
 		if(empty($tags)){
 			return []; 
 		}
-		$list=$this->where("tag_id_2nd",$tags->tag_id)->get();
+		$list=$this->where("tag_id_2nd",$tags->tag_id)->limit($limit)->get();
 		$list=$this->Dselect($list);
 		return $list;
-	}
+	} 
 
 	
 }

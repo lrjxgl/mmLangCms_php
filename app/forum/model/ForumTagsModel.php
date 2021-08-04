@@ -40,7 +40,7 @@ class ForumTagsModel extends Model{
 		if(empty($tag)){
 			return [];
 		}
-		$list=DBS::MM("forum","ForumTagsIndex")->where("tagid",$tag->tagid)->get();
+		$list=DBS::MM("forum","ForumTagsIndex")->limit($tag->gnum)->where("tagid",$tag->tagid)->get();
 		if(empty($list)){
 			return [];
 		}
