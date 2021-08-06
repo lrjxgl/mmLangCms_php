@@ -17,27 +17,27 @@ class Upload{
         }
         $file = $request->file('upimg');
         $dir="/attach/".date("Y/m/d");
-        
-        if(!file_exists($dir)){
-            mkdir($dir,0777,true);
+        $rootDir=public_path()."/".$dir;
+        if(!file_exists($rootDir)){
+            mkdir($rootDir,0777,true);
         }
         $ftype=$file->getUploadExtension(); 
         $filename=$dir."/".$file->getUploadName();
         $rootFile= public_path()."/".$filename;
         if ($file && $file->isValid()) {
-            $file->move($filename);
+            $file->move( $rootFile);
             DBS::MM("index","attach")->add([
                 "url"=>$filename,
                 "userid"=>$ssuserid
             ]);
             //处理图片
-            $a=$filename.".100x100.png";
-            $b=$filename.".small.png";
-            $c=$filename.".middle.png";
-            $img = Image::make($filename)->resize(160, 160)->save($a);
-            $img = Image::make($filename)->resize(480, 480)->save($b);
-            $img = Image::make($filename)->resize(750, 750)->save($c);
-            Oos::upload($filename);
+            $a=$rootFile.".100x100.png";
+            $b=$rootFile.".small.png";
+            $c=$rootFile.".middle.png";
+            $img = Image::make($rootFile)->resize(160, 160)->save($a);
+            $img = Image::make($rootFile)->resize(480, 480)->save($b);
+            $img = Image::make($rootFile)->resize(750, 750)->save($c);
+            Oos::upload($rootFile);
             Oos::upload($a);
             Oos::upload($b);
             Oos::upload($c);

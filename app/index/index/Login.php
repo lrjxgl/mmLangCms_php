@@ -41,7 +41,7 @@ class Login{
         $iRefreshToken=$request->get("iRefreshToken","");
         UserAccess::del($iToken);
         UserAccess::del($iRefreshToken);
-
+        return Help::success(0,"注销登陆成功");
     }
 
     /*@@findpwd@@*/

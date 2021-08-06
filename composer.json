@@ -30,6 +30,7 @@
     "vlucas/phpdotenv": "5.1.0",
     "illuminate/database": "8.0",
     "illuminate/redis": "8.2.0",
+    "guzzlehttp/guzzle": "^7.3",
     "intervention/image": "^2.6"
   },
   "suggest": {
