@@ -22,10 +22,15 @@ class ForumModel extends Model{
 				$v->imgurl=Help::images_site($v->imgurl);
 			}
 			if(isset($us[$v->userid])){
-				$v["user"]=$us[$v->userid];
+				$v->user=$us[$v->userid];
 			}else{
-				$v["user"]=[];
+				$v->user=[];
 			}
+			$imgList=explode(",",$v->imgsdata);
+			foreach($imgList as $kk=>$vv){
+				$imgList[$kk]=Help::images_site($vv);
+			}
+			$v->imgList=$imgList;  
 			$v->timeago=Help::timeago($v->createtime); 
 		}
 		return $list; 

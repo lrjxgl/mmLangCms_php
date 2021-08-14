@@ -5,7 +5,7 @@ use GuzzleHttp\Psr7;
 class Oos{
     public static $imgHost="http://oos.mmlang.com/upload.php";  
     public static function Upload($from){
-        return true;
+        
         $name=str_replace(public_path()."/","",$from);
         $file = curl_file_create($from, 'image/jpeg',$name);
         $client = new Client();

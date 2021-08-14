@@ -7,6 +7,42 @@ use ext\UserAccess;
 use ext\Help;
 class Fav
 { 
+
+    /*
+    @@my@@
+    */
+    public function my(Request $request){
+        $userid=UserAccess::checkAccess($request);  
+        if($userid==0){
+            return Help::success(1,"请先登录");
+        }
+       
+        $tablename=$request->get("tablename","");
+        $where=[
+            ["userid",$userid],
+           
+            ["tablename",$tablename]
+
+        ];
+        $ids=DBS::MM("index","fav")->where($where)->pluck("objectid");
+        $list=[]; 
+        switch($tablename){
+            case "article":
+                $list=DBS::MM("index","article")->getListByIds($ids);
+                break;
+            case "forum":
+                $list=DBS::MM("forum","forum")->getListByIds($ids);
+                break;    
+        }
+        $reData=[
+            "error"=>0,
+            "message"=>"success",
+            "list"=>$list
+
+        ]; 
+        return json($reData);
+
+    }
 	 /*@@get@@*/
      public function get(Request $request){
         $userid=UserAccess::checkAccess($request);  

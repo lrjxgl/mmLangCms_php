@@ -15,6 +15,11 @@ class Article
         $limit=12;
         $fm=DBS::MM("index","Article");
         $where="status in(0,1,2) ";
+        $catid=intval($request->get("catid"));
+        if($catid){
+            $cids=DBS::MM("index","category")->id_family($catid);
+            $where.=" AND catid in(".Help::_implode($cids).") ";
+        } 
 		$list=$fm
                 ->offset($start)
                 ->limit($limit)
@@ -25,12 +30,16 @@ class Article
         $rscount=$fm->whereRaw($where)->count();
         $per_page=$start+$limit;
         $per_page=$per_page>$rscount?0:$per_page;
+        //获取分类
+        $catList=DBS::MM("index","category")->WhereRaw("status=1 AND pid=0 AND tablename='article'")->get();
+
         $redata=[
             "error" => 0, 
             "message" => "success",
             "list"=>$list,
             "per_page"=>$per_page,
-            "rscount"=>$rscount
+            "rscount"=>$rscount,
+            "catList"=>$catList
 
         ];
 		return json($redata); 
@@ -45,6 +54,13 @@ class Article
         $limit=12;
         $fm=DBS::MM("index","Article");
         $where="status in(0,1,2) ";
+        $catid=intval($request->get("catid"));
+        $cat=[];
+        if($catid){
+            $cids=DBS::MM("index","category")->id_family($catid);
+            $where.=" AND catid in(".Help::_implode($cids).") ";
+            $cat=DBS::MM("index","category")->Where("catid",$catid)->First();
+        }
 		$list=$fm
                 ->offset($start)
                 ->limit($limit)
@@ -55,12 +71,16 @@ class Article
         $rscount=$fm->whereRaw($where)->count();
         $per_page=$start+$limit;
         $per_page=$per_page>$rscount?0:$per_page;
+        //分类
+        $catList=DBS::MM("index","category")->Children($catid,"article",1); 
         $redata=[
             "error" => 0, 
             "message" => "success",
             "list"=>$list,
             "per_page"=>$per_page,
-            "rscount"=>$rscount
+            "rscount"=>$rscount,
+            "cat"=>$cat,
+            "catList"=>$catList
 
         ];
 		return json($redata); 
@@ -77,6 +97,7 @@ class Article
             return Help::success(1,"数据不存在");
         }
         $data->imgurl=Help::images_site($data->imgurl);
+        $data->content=DBS::MM("index","articleData")->where("id",$id)->value("content");
         $author=DBS::MM("index","user")->get($data->userid);
         $redata=[
             "error" => 0, 

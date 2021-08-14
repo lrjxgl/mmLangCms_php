@@ -15,6 +15,8 @@ class NoticeModel extends Model{
 			if(isset($v->imgurl)){
 				$v->imgurl=Help::images_site($v->imgurl);
 			}
+			$v->timeago=Help::timeago($v->createtime);
+			$v->status_name=$v->status==1?'已读':'未读';
 		}
 		return $list; 
 	}

@@ -15,6 +15,7 @@ class GoldLogModel extends Model{
 			if(isset($v->imgurl)){
 				$v->imgurl=Help::images_site($v->imgurl);
 			}
+			$v->timeago=Help::timeago($v->createtime);
 		}
 		return $list; 
 	}

@@ -31,7 +31,7 @@ class Forum
     /*@@list@@*/
     public function list(Request $request){
         $gid=intval($request->get("gid"));
-        $where=" gid=".$gid." AND status=1 ";
+        $where=" gid=".$gid." AND status in(0,1) ";
         $group=DBS::MM("forum","ForumGroup")->where("gid",$gid)->first();
         
         if(!empty($group)){
@@ -73,7 +73,7 @@ class Forum
      /*@@new@@*/
      public function new(Request $request){
         
-        $where=" status=1 ";
+        $where=" status in(0,1) ";
         $start=$request->get("per_page");
         $limit=4;
         $fm=DBS::MM("forum","Forum");
@@ -234,12 +234,26 @@ class Forum
             $indata["status"]=0;      
             $id=$fm->insertGetId($indata);
             DBS::MM("forum","forumData")->insert(["content"=>$conent,"id"=>$id]);
+         
+            /*推送给粉丝*/
+            $fuids=DBS::MM("index","followed")->Where("userid",$ssuserid)->pluck('t_userid');
+            if(!empty($fuids)){
+                foreach($fuids as $uid){ 
+                    DBS::MM("forum","forumFeeds")->insert([
+                        "userid"=>$uid,
+                        "objectid"=>$id,
+                        "fuserid"=>$ssuserid,
+                        "createtime"=>date("Y-m-d H:i:s")
+                    ]);
+                }
+            }
+
         }
       
        
         $redata=[
             "error" => 0, 
-            "message" => "save ok",
+            "message" => "保存成功",
             "insert_id"=>$id
         ];
 		return json($redata); 

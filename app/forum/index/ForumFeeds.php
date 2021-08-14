@@ -15,16 +15,17 @@ class ForumFeeds
         $limit=12;
         $fm=DBS::MM("forum","ForumFeeds");
         $where=" 1 ";
-		$list=$fm
+		$ids=$fm
                 ->offset($start)
                 ->limit($limit)
                 ->whereRaw($where)
 				->orderBy("id","desc")
-                ->get();
-        $list=$fm->Dselect($list);
+                ->pluck("objectid");
+        $list=DBS::MM("forum","Forum")->getListByIds($ids);
         $rscount=$fm->whereRaw($where)->count();
         $per_page=$start+$limit;
-        $per_page=$per_page>$rscount?0:$per_page;
+        $per_page=$per_page>$rscount?0:$per_page; 
+        
         $redata=[
             "error" => 0, 
             "message" => "success",

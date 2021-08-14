@@ -37,8 +37,9 @@ class CategoryModel extends Model{
 		}else{
 			$where.=" AND status=".$status;
 		}
-
+		 
 		$one=$this->whereRaw($where." AND pid=".$pid)->get();
+		 
 		$two=[];
 		$three=[];
 		if(!empty($one)){
