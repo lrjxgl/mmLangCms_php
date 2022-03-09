@@ -1,16 +1,22 @@
-# webman
+# mmLangCms_php
+基于webman框架实现mmLangCms的Api接口
 
-High performance HTTP Service Framework for PHP based on [Workerman](https://github.com/walkor/workerman).
+## 基础配置
+   数据库 config/database.php /.env  
+   文件地址 ext/Help.php  
+   远程文件 ext/Oos.php  
+# Api 列表 
+## 用户 
+ /register 注册 完成    
+ /login 登录  完成    
+ /user 用户信息    
+## 论坛
+/forun/ 完成   
+/admin/forum/ 完成  
 
-# Manual
-
-https://www.workerman.net/doc/webman
-
-# Benchmarks
-
-https://www.techempower.com/benchmarks/#section=test&runid=9716e3cd-9e53-433c-b6c5-d2c48c9593c1&hw=ph&test=db&l=zg24n3-1r&a=2
-![image](https://user-images.githubusercontent.com/6073368/96447814-120fc980-1245-11eb-938d-6ea408716c72.png)
-
-## LICENSE
-
-MIT
+## 后台  
+ /admin/navbar 完成  
+ /admin/admin/ 管理员管理完成  
+ /admin/article/ 文章管理完成  
+ /admin/category/ 文章分类管理完成  
+ 
