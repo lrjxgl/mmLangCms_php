@@ -27,6 +27,13 @@ class UdpConnection extends ConnectionInterface
     public $protocol = null;
 
     /**
+     * Transport layer protocol.
+     *
+     * @var string
+     */
+    public $transport = 'udp';
+
+    /**
      * Udp socket.
      *
      * @var resource
@@ -187,5 +194,15 @@ class UdpConnection extends ConnectionInterface
             $this->send($data, $raw);
         }
         return true;
+    }
+    
+    /**
+     * Get the real socket.
+     *
+     * @return resource
+     */
+    public function getSocket()
+    {
+        return $this->_socket;
     }
 }

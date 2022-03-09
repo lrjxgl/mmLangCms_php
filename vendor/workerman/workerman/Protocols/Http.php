@@ -56,7 +56,7 @@ class Http
     /**
      * Get or set session name.
      *
-     * @param null $name
+     * @param string|null $name
      * @return string
      */
     public static function sessionName($name = null)
@@ -70,7 +70,7 @@ class Http
     /**
      * Get or set the request class name.
      *
-     * @param null $class_name
+     * @param string|null $class_name
      * @return string
      */
     public static function requestClass($class_name = null)
@@ -84,7 +84,7 @@ class Http
     /**
      * Enable or disable Cache.
      *
-     * @param $value
+     * @param mixed $value
      */
     public static function enableCache($value)
     {
@@ -125,7 +125,7 @@ class Http
                 }
             }
             return $head_len;
-        } else if ($method !== 'POST' && $method !== 'PUT') {
+        } else if ($method !== 'POST' && $method !== 'PUT' && $method !== 'PATCH') {
             $connection->close("HTTP/1.1 400 Bad Request\r\n\r\n", true);
             return 0;
         }
@@ -144,6 +144,10 @@ class Http
                 if (\count($input) > 512) {
                     unset($input[key($input)]);
                 }
+            }
+            if ($length > $connection->maxPackageSize) {
+                $connection->close("HTTP/1.1 413 Request Entity Too Large\r\n\r\n");
+                return 0;
             }
             return $length;
         }
@@ -254,9 +258,9 @@ class Http
      * Send remainder of a stream to client.
      *
      * @param TcpConnection $connection
-     * @param $handler
-     * @param $offset
-     * @param $length
+     * @param resource $handler
+     * @param int $offset
+     * @param int $length
      */
     protected static function sendStream(TcpConnection $connection, $handler, $offset = 0, $length = 0)
     {

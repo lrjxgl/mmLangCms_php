@@ -4,24 +4,23 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
+class ComposerStaticInit27d4d33f1b02546ff2db6e33a6906226
 {
     public static $files = array (
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '60799491728b879e74601d83e38b2cad' => __DIR__ . '/..' . '/illuminate/collections/helpers.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '60799491728b879e74601d83e38b2cad' => __DIR__ . '/..' . '/illuminate/collections/helpers.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'ef65a1626449d89d0811cf9befce46f0' => __DIR__ . '/..' . '/illuminate/events/functions.php',
         'da5b71a9ad8465d48da441e2f36823b6' => __DIR__ . '/../..' . '/support/helpers.php',
     );
 
@@ -32,6 +31,7 @@ class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
         ),
         'W' => 
         array (
+            'Workerman\\Crontab\\' => 18,
             'Workerman\\' => 10,
             'Webman\\' => 7,
         ),
@@ -54,9 +54,7 @@ class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
-            'Psr\\Http\\Client\\' => 16,
             'Psr\\Container\\' => 14,
-            'PhpOption\\' => 10,
         ),
         'M' => 
         array (
@@ -66,17 +64,17 @@ class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
         array (
             'Intervention\\Image\\' => 19,
             'Illuminate\\Support\\' => 19,
-            'Illuminate\\Redis\\' => 17,
+            'Illuminate\\Pipeline\\' => 20,
+            'Illuminate\\Pagination\\' => 22,
+            'Illuminate\\Events\\' => 18,
             'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
+            'Illuminate\\Bus\\' => 15,
         ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
-            'GuzzleHttp\\Promise\\' => 19,
-            'GuzzleHttp\\' => 11,
-            'GrahamCampbell\\ResultType\\' => 26,
         ),
         'F' => 
         array (
@@ -84,7 +82,6 @@ class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
         ),
         'D' => 
         array (
-            'Dotenv\\' => 7,
             'Doctrine\\Inflector\\' => 19,
         ),
         'C' => 
@@ -97,6 +94,10 @@ class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+        ),
+        'Workerman\\Crontab\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/workerman/crontab/src',
         ),
         'Workerman\\' => 
         array (
@@ -163,17 +164,9 @@ class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
             1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Psr\\Http\\Client\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-client/src',
-        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
-        ),
-        'PhpOption\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
         'Monolog\\' => 
         array (
@@ -189,9 +182,17 @@ class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
             1 => __DIR__ . '/..' . '/illuminate/macroable',
             2 => __DIR__ . '/..' . '/illuminate/support',
         ),
-        'Illuminate\\Redis\\' => 
+        'Illuminate\\Pipeline\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/redis',
+            0 => __DIR__ . '/..' . '/illuminate/pipeline',
+        ),
+        'Illuminate\\Pagination\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/pagination',
+        ),
+        'Illuminate\\Events\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/events',
         ),
         'Illuminate\\Database\\' => 
         array (
@@ -205,29 +206,17 @@ class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
+        'Illuminate\\Bus\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/bus',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
-        'GuzzleHttp\\Promise\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
-        ),
-        'GuzzleHttp\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
-        ),
-        'GrahamCampbell\\ResultType\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
-        ),
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
-        ),
-        'Dotenv\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
         'Doctrine\\Inflector\\' => 
         array (
@@ -239,11 +228,16 @@ class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
         ),
     );
 
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/../..' . '/',
+    );
+
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
@@ -252,9 +246,10 @@ class ComposerStaticInit64a9ebb868778db33c3d72b77164841c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit64a9ebb868778db33c3d72b77164841c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit64a9ebb868778db33c3d72b77164841c::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit64a9ebb868778db33c3d72b77164841c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit27d4d33f1b02546ff2db6e33a6906226::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit27d4d33f1b02546ff2db6e33a6906226::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit27d4d33f1b02546ff2db6e33a6906226::$fallbackDirsPsr4;
+            $loader->classMap = ComposerStaticInit27d4d33f1b02546ff2db6e33a6906226::$classMap;
 
         }, null, ClassLoader::class);
     }

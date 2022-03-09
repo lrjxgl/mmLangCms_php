@@ -15,8 +15,9 @@ namespace Webman;
 
 use FastRoute\Dispatcher\GroupCountBased;
 use FastRoute\RouteCollector;
-use Webman\App;
+use Psr\Container\ContainerInterface;
 use Webman\Route\Route as RouteObject;
+use function FastRoute\simpleDispatcher;
 
 /**
  * Class Route
@@ -24,6 +25,11 @@ use Webman\Route\Route as RouteObject;
  */
 class Route
 {
+    /**
+     * @var ContainerInterface
+     */
+    protected static $_container = null;
+
     /**
      * @var Route
      */
@@ -63,6 +69,11 @@ class Route
      * @var bool
      */
     protected static $_disableDefaultRoute = false;
+
+    /**
+     * @var RouteObject[]
+     */
+    protected static $_allRoutes = [];
 
     /**
      * @var RouteObject[]
@@ -118,7 +129,7 @@ class Route
     {
         return static::addRoute('DELETE', $path, $callback);
     }
-    
+
     /**
      * @param $path
      * @param $callback
@@ -167,12 +178,21 @@ class Route
      */
     public static function group($path, $callback)
     {
-        static::$_groupPrefix = $path;
+        $previous_group_prefix = static::$_groupPrefix;
+        static::$_groupPrefix = $previous_group_prefix . $path;
         $instance = static::$_instance = new static;
         static::$_collector->addGroup($path, $callback);
         static::$_instance = null;
-        static::$_groupPrefix = '';
+        static::$_groupPrefix = $previous_group_prefix;
         return $instance;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getRoutes()
+    {
+        return static::$_allRoutes;
     }
 
     /**
@@ -253,7 +273,7 @@ class Route
         if (\is_array($callback)) {
             $callback = \array_values($callback);
             if (isset($callback[1]) && \is_string($callback[0]) && \class_exists($callback[0])) {
-                $callback = [App::container()->get($callback[0]), $callback[1]];
+                $callback = [static::container()->get($callback[0]), $callback[1]];
             }
         }
 
@@ -266,17 +286,19 @@ class Route
     }
 
     /**
-     * @param $method
+     * @param $methods
      * @param $path
      * @param $callback
      * @return RouteObject
      */
-    protected static function addRoute($method, $path, $callback)
+    protected static function addRoute($methods, $path, $callback)
     {
         static::$_hasRoute = true;
-        $route = new RouteObject($method, static::$_groupPrefix . $path, $callback);
+        $route = new RouteObject($methods, static::$_groupPrefix . $path, $callback);
+        static::$_allRoutes[] = $route;
+
         if ($callback = static::convertToCallable($path, $callback)) {
-            static::$_collector->addRoute($method, $path, ['callback' => $callback, 'route' => $route]);
+            static::$_collector->addRoute($methods, $path, ['callback' => $callback, 'route' => $route]);
         }
         if (static::$_instance) {
             static::$_instance->collect($route);
@@ -287,12 +309,27 @@ class Route
     /**
      * @return bool
      */
-    public static function load($route_config_file)
+    public static function load($config_path)
     {
-        static::$_dispatcher = \FastRoute\simpleDispatcher(function (RouteCollector $route) use ($route_config_file) {
+        if (!is_dir($config_path)) {
+            $config_path = pathinfo($config_path, PATHINFO_DIRNAME);
+        }
+        static::$_dispatcher = simpleDispatcher(function (RouteCollector $route) use ($config_path) {
             Route::setCollector($route);
+            $route_config_file = $config_path . '/route.php';
             if (\is_file($route_config_file)) {
                 require_once $route_config_file;
+            }
+            foreach (glob($config_path.'/plugin/*/*/route.php') as $file) {
+                $app_config_file = pathinfo($file, PATHINFO_DIRNAME).'/app.php';
+                if (!is_file($app_config_file)) {
+                    continue;
+                }
+                $app_config = include $app_config_file;
+                if (empty($app_config['enable'])) {
+                    continue;
+                }
+                require_once $file;
             }
         });
         return static::$_hasRoute;
@@ -322,4 +359,18 @@ class Route
         return is_callable(static::$_fallback) ? static::$_fallback : null;
     }
 
+    /**
+     * @param $container
+     * @return ContainerInterface
+     */
+    public static function container($container = null)
+    {
+        if ($container) {
+            static::$_container = $container;
+        }
+        if (!static::$_container) {
+            static::$_container = App::container();
+        }
+        return static::$_container;
+    }
 }

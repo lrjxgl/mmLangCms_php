@@ -12,16 +12,22 @@
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+use support\Request;
+
 return [
-    'listen'               => 'http://0.0.0.0:888',
-    'transport'            => 'tcp',
-    'context'              => [],
-    'name'                 => 'webman',
-    'count'                => env('SERVER_PROCESS_COUNT', cpu_count() * 2),
-    'user'                 => env('SERVER_PROCESS_USER', ''),
-    'group'                => env('SERVER_PROCESS_GROUUP', ''),
-    'pid_file'             => runtime_path() . '/webman.pid',
-    'max_request'          => 1000000,
-    'stdout_file'          => runtime_path() . '/logs/stdout.log',
-    'max_package_size'     => 10*1024*1024
+    'listen' => 'http://0.0.0.0:8787',
+    'transport' => 'tcp',
+    'context' => [],
+    'name' => 'webman',
+    'count' => cpu_count() * 2,
+    'user' => '',
+    'group' => '',
+    'reusePort' => false,
+    'event_loop' => '',
+    'request_class' => Request::class,
+    'pid_file' => runtime_path() . '/webman.pid',
+    'status_file' => runtime_path() . '/webman.status',
+    'stdout_file' => runtime_path() . '/logs/stdout.log',
+    'log_file' => runtime_path() . '/logs/workerman.log',
+    'max_package_size' => 10 * 1024 * 1024
 ];

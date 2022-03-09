@@ -18,6 +18,21 @@ class Forum
                 ->whereRaw($where)
                 ->get();
         $list=$fm->Dselect($list);
+        if(!empty($list)){
+            $gids=[];
+            $catids=[];
+            foreach($list as $v){
+                $gids[]=$v["gid"];
+                $catids[]=$v["catid"];
+            }
+            $groups=DBS::MM("forum","ForumGroup")->getListByIds($gids);
+            $cats=DBS::MM("forum","ForumCategory")->getListByIds($catids);
+            foreach($list as $k=>$v){
+                $v["group"]=$groups[$v["gid"]];
+                $v["cat"]=$cats[$v["catid"]];
+                $list[$k]=$v;
+            }
+        }
         $rscount=$fm->whereRaw($where)->count();
         $per_page=$start+$limit;
         $per_page=$per_page>$rscount?0:$per_page;

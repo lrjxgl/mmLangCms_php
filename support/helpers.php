@@ -14,20 +14,37 @@
 
 use support\Request;
 use support\Response;
+use support\Translation;
+use support\Container;
 use support\view\Raw;
-use support\bootstrap\Translation;
+use support\view\Blade;
+use support\view\ThinkPHP;
+use support\view\Twig;
+use Workerman\Worker;
 use Webman\App;
 use Webman\Config;
-use Webman\Exception\ClassNotFoundException;
+use Webman\Route;
 
-define('BASE_PATH', realpath(__DIR__ . '/../'));
+// Phar support.
+if (is_phar()) {
+    define('BASE_PATH', dirname(__DIR__));
+} else {
+    define('BASE_PATH', realpath(__DIR__ . '/../'));
+}
+define('WEBMAN_VERSION', '1.2.5');
+
 
 /**
- * @return string
+ * @param $return_phar
+ * @return false|string
  */
-function base_path()
+function base_path($return_phar = true)
 {
-    return BASE_PATH;
+    static $real_path = '';
+    if (!$real_path) {
+        $real_path = is_phar() ? dirname(Phar::running(false)) : BASE_PATH;
+    }
+    return $return_phar ? BASE_PATH : $real_path;
 }
 
 /**
@@ -43,7 +60,11 @@ function app_path()
  */
 function public_path()
 {
-    return BASE_PATH . DIRECTORY_SEPARATOR . 'public';
+    static $path = '';
+    if (!$path) {
+        $path = get_realpath(config('app.public_path', BASE_PATH . DIRECTORY_SEPARATOR . 'public'));
+    }
+    return $path;
 }
 
 /**
@@ -55,11 +76,18 @@ function config_path()
 }
 
 /**
+ * Phar support.
+ * Compatible with the 'realpath' function in the phar file.
+ *
  * @return string
  */
 function runtime_path()
 {
-    return BASE_PATH . DIRECTORY_SEPARATOR . 'runtime';
+    static $path = '';
+    if (!$path) {
+        $path = get_realpath(config('app.runtime_path', BASE_PATH . DIRECTORY_SEPARATOR . 'runtime'));
+    }
+    return $path;
 }
 
 /**
@@ -127,7 +155,7 @@ function redirect($location, $status = 302, $headers = [])
  * @param $template
  * @param array $vars
  * @param null $app
- * @return string
+ * @return Response
  */
 function view($template, $vars = [], $app = null)
 {
@@ -136,6 +164,50 @@ function view($template, $vars = [], $app = null)
         $handler = config('view.handler');
     }
     return new Response(200, [], $handler::render($template, $vars, $app));
+}
+
+/**
+ * @param $template
+ * @param array $vars
+ * @param null $app
+ * @return Response
+ */
+function raw_view($template, $vars = [], $app = null)
+{
+    return new Response(200, [], Raw::render($template, $vars, $app));
+}
+
+/**
+ * @param $template
+ * @param array $vars
+ * @param null $app
+ * @return Response
+ */
+function blade_view($template, $vars = [], $app = null)
+{
+    return new Response(200, [], Blade::render($template, $vars, $app));
+}
+
+/**
+ * @param $template
+ * @param array $vars
+ * @param null $app
+ * @return Response
+ */
+function think_view($template, $vars = [], $app = null)
+{
+    return new Response(200, [], ThinkPHP::render($template, $vars, $app));
+}
+
+/**
+ * @param $template
+ * @param array $vars
+ * @param null $app
+ * @return Response
+ */
+function twig_view($template, $vars = [], $app = null)
+{
+    return new Response(200, [], Twig::render($template, $vars, $app));
 }
 
 /**
@@ -156,41 +228,36 @@ function config($key = null, $default = null)
     return Config::get($key, $default);
 }
 
-if (!function_exists('env')) {
-    /**
-     * @param $key
-     * @param null $default
-     * @return array|bool|false|mixed|string
-     */
-    function env($key, $default = null)
-    {
-        $value = getenv($key);
-
-        if ($value === false) {
-            return $default;
-        }
-
-        switch (strtolower($value)) {
-            case 'true':
-            case '(true)':
-                return true;
-            case 'false':
-            case '(false)':
-                return false;
-            case 'empty':
-            case '(empty)':
-                return '';
-            case 'null':
-            case '(null)':
-                return null;
-        }
-
-        if (($valueLength = strlen($value)) > 1 && $value[0] === '"' && $value[$valueLength - 1] === '"') {
-            return substr($value, 1, -1);
-        }
-
-        return $value;
+/**
+ * @param $name
+ * @param array $parameters
+ * @return string
+ */
+function route($name, $parameters = [])
+{
+    $route = Route::getByName($name);
+    if (!$route) {
+        return '';
     }
+    return $route->url($parameters);
+}
+
+/**
+ * @param null $key
+ * @param null $default
+ * @return mixed
+ */
+function session($key = null, $default = null)
+{
+    $session = request()->session();
+    if (null === $key) {
+        return $session;
+    }
+    if (\is_array($key)) {
+        $session->put($key);
+        return null;
+    }
+    return $session->get($key, $default);
 }
 
 /**
@@ -202,14 +269,15 @@ if (!function_exists('env')) {
  */
 function trans(string $id, array $parameters = [], string $domain = null, string $locale = null)
 {
-    return Translation::trans($id, $parameters, $domain, $locale);
+    $res = Translation::trans($id, $parameters, $domain, $locale);
+    return $res === '' ? $id : $res;
 }
 
 /**
  * @param null|string $locale
  * @return string
  */
-function locale(string $locale)
+function locale(string $locale = null)
 {
     if (!$locale) {
         return Translation::getLocale();
@@ -218,10 +286,52 @@ function locale(string $locale)
 }
 
 /**
+ * Copy dir.
+ * @param $source
+ * @param $dest
+ * @param bool $overwrite
+ * @return void
+ */
+function copy_dir($source, $dest, $overwrite = false)
+{
+    if (is_dir($source)) {
+        if (!is_dir($dest)) {
+            mkdir($dest);
+        }
+        $files = scandir($source);
+        foreach ($files as $file) {
+            if ($file !== "." && $file !== "..") {
+                copy_dir("$source/$file", "$dest/$file");
+            }
+        }
+    } else if (file_exists($source) && ($overwrite || !file_exists($dest))) {
+        copy($source, $dest);
+    }
+}
+
+/**
+ * Remove dir.
+ * @param $dir
+ * @return bool
+ */
+function remove_dir($dir)
+{
+    if (is_link($dir) || is_file($dir)) {
+        return unlink($dir);
+    }
+    $files = array_diff(scandir($dir), array('.', '..'));
+    foreach ($files as $file) {
+        (is_dir("$dir/$file") && !is_link($dir)) ? remove_dir("$dir/$file") : unlink("$dir/$file");
+    }
+    return rmdir($dir);
+}
+
+/**
  * @param $worker
  * @param $class
  */
-function worker_bind($worker, $class) {
+function worker_bind($worker, $class)
+{
     $callback_map = [
         'onConnect',
         'onMessage',
@@ -243,9 +353,92 @@ function worker_bind($worker, $class) {
 }
 
 /**
+ * @param $process_name
+ * @param $config
+ * @return void
+ */
+function worker_start($process_name, $config)
+{
+    $worker = new Worker($config['listen'] ?? null, $config['context'] ?? []);
+    $property_map = [
+        'count',
+        'user',
+        'group',
+        'reloadable',
+        'reusePort',
+        'transport',
+        'protocol',
+    ];
+    $worker->name = $process_name;
+    foreach ($property_map as $property) {
+        if (isset($config[$property])) {
+            $worker->$property = $config[$property];
+        }
+    }
+
+    $worker->onWorkerStart = function ($worker) use ($config) {
+        require_once base_path() . '/support/bootstrap.php';
+
+        foreach ($config['services'] ?? [] as $server) {
+            if (!class_exists($server['handler'])) {
+                echo "process error: class {$server['handler']} not exists\r\n";
+                continue;
+            }
+            $listen = new Worker($server['listen'] ?? null, $server['context'] ?? []);
+            if (isset($server['listen'])) {
+                echo "listen: {$server['listen']}\n";
+            }
+            $instance = Container::make($server['handler'], $server['constructor'] ?? []);
+            worker_bind($listen, $instance);
+            $listen->listen();
+        }
+
+        if (isset($config['handler'])) {
+            if (!class_exists($config['handler'])) {
+                echo "process error: class {$config['handler']} not exists\r\n";
+                return;
+            }
+
+            $instance = Container::make($config['handler'], $config['constructor'] ?? []);
+            worker_bind($worker, $instance);
+        }
+
+    };
+}
+
+/**
+ * Phar support.
+ * Compatible with the 'realpath' function in the phar file.
+ *
+ * @param string $file_path
+ * @return string
+ */
+function get_realpath(string $file_path): string
+{
+    if (is_phar()) {
+        return $file_path;
+    } else {
+        return realpath($file_path);
+    }
+}
+
+/**
+ * @return bool
+ */
+function is_phar()
+{
+    return class_exists(\Phar::class, false) && Phar::running();
+}
+
+/**
  * @return int
  */
-function cpu_count() {
+function cpu_count()
+{
+    // Windows does not support the number of processes setting.
+    if (\DIRECTORY_SEPARATOR === '\\') {
+        return 1;
+    }
     if (strtolower(PHP_OS) === 'darwin') {
         $count = shell_exec('sysctl -n machdep.cpu.core_count');
     } else {

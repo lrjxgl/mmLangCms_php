@@ -36,9 +36,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 // Create a Websocket server
 $ws_worker = new Worker('websocket://0.0.0.0:2346');
 
-// 4 processes
-$ws_worker->count = 4;
-
 // Emitted when new connection come
 $ws_worker->onConnect = function ($connection) {
     echo "New connection\n";
@@ -282,24 +279,31 @@ Worker::runAll();
 
 ## Documentation
 
-中文主页:[http://www.workerman.net](http://www.workerman.net)
+中文主页:[http://www.workerman.net](https://www.workerman.net)
 
-中文文档: [http://doc.workerman.net](http://doc.workerman.net)
+中文文档: [https://www.workerman.net/doc/workerman](https://www.workerman.net/doc/workerman)
 
-Documentation:[https://github.com/walkor/workerman-manual](https://github.com/walkor/workerman-manual/blob/master/english/src/SUMMARY.md)
+Documentation:[https://github.com/walkor/workerman-manual](https://github.com/walkor/workerman-manual/blob/master/english/SUMMARY.md)
 
 # Benchmarks
-https://www.techempower.com/benchmarks/#section=data-r19&hw=ph&test=plaintext&l=zik073-1r
+https://www.techempower.com/benchmarks/#section=data-r20&hw=ph&test=db&l=yyku7z-e7&a=2
+![image](https://user-images.githubusercontent.com/6073368/146704320-1559fe97-aa67-4ee3-95d6-61e341b3c93b.png)
 
+## Sponsors
+[opencollective.com/walkor](https://opencollective.com/walkor)
+
+[patreon.com/walkor](https://patreon.com/walkor)
+
+## Donate
+
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UQGGS9UB35WWG"><img src="http://donate.workerman.net/img/donate.png"></a>
 
 ## Other links with workerman
 
+[webman](https://github.com/walkor/webman)   
 [PHPSocket.IO](https://github.com/walkor/phpsocket.io)   
 [php-socks5](https://github.com/walkor/php-socks5)  
 [php-http-proxy](https://github.com/walkor/php-http-proxy)  
-
-## Donate
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UQGGS9UB35WWG"><img src="http://donate.workerman.net/img/donate.png"></a>
 
 ## LICENSE
 

@@ -11,6 +11,7 @@
  * @link      http://www.workerman.net/
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace support\view;
 
 use think\Template;
@@ -23,6 +24,20 @@ use Webman\View;
 class ThinkPHP implements View
 {
     /**
+     * @var array
+     */
+    protected static $_vars = [];
+
+    /**
+     * @param $name
+     * @param null $value
+     */
+    public static function assign($name, $value = null)
+    {
+        static::$_vars = \array_merge(static::$_vars, \is_array($name) ? $name : [$name => $value]);
+    }
+
+    /**
      * @param $template
      * @param $vars
      * @param string $app
@@ -30,21 +45,20 @@ class ThinkPHP implements View
      */
     public static function render($template, $vars, $app = null)
     {
-        static $view;
-        $view = $view ? : new Template([
-            'view_path'   => app_path().'/',
-            'cache_path'  => runtime_path() . '/views/',
+        $app = $app == null ? \request()->app : $app;
+        $view_path = $app === '' ? \app_path() . '/view/' : \app_path() . "/$app/view/";
+        $default_options = [
+            'view_path' => $view_path,
+            'cache_path' => \runtime_path() . '/views/',
             'view_suffix' => config('view.view_suffix', 'html')
-        ]);
-        $app_name = $app == null ? request()->app : $app;
-        if ($app_name === '') {
-            $view_path = "view/$template";
-        } else {
-            $view_path = "$app_name/view/$template";
-        }
+        ];
+        $options = $default_options + \config('view.options', []);
+        $views = new Template($options);
         \ob_start();
-        $view->fetch($view_path, $vars);
+        $vars = \array_merge(static::$_vars, $vars);
+        $views->fetch($template, $vars);
         $content = \ob_get_clean();
+        static::$_vars = [];
         return $content;
     }
 }

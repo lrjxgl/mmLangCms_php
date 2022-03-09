@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -10,19 +11,27 @@ use Webman\Route;
 use Webman\Middleware;
 use Dotenv\Dotenv;
 use support\Request;
-use support\bootstrap\Log;
-use support\bootstrap\Container;
+use support\Log;
+use support\Container;
 
+ini_set('display_errors', 'on');
+error_reporting(E_ALL);
 
-Dotenv::createMutable(base_path())->load();
+if (class_exists('Dotenv\Dotenv') && file_exists(base_path() . '/.env')) {
+    if (method_exists('Dotenv\Dotenv', 'createUnsafeImmutable')) {
+        Dotenv::createUnsafeImmutable(base_path())->load();
+    } else {
+        Dotenv::createMutable(base_path())->load();
+    }
+}
+
 Config::load(config_path(), ['route', 'container']);
-$config = config('server');
 
 if ($timezone = config('app.default_timezone')) {
     date_default_timezone_set($timezone);
 }
 
-Worker::$onMasterReload = function (){
+Worker::$onMasterReload = function () {
     if (function_exists('opcache_get_status')) {
         if ($status = opcache_get_status()) {
             if (isset($status['scripts']) && $scripts = $status['scripts']) {
@@ -34,105 +43,52 @@ Worker::$onMasterReload = function (){
     }
 };
 
-Worker::$pidFile                      = $config['pid_file'];
-Worker::$stdoutFile                   = $config['stdout_file'];
-TcpConnection::$defaultMaxPackageSize = $config['max_package_size'] ?? 10*1024*1024;
-
-$worker = new Worker($config['listen'], $config['context']);
-$property_map = [
-    'name',
-    'count',
-    'user',
-    'group',
-    'reusePort',
-    'transport',
-];
-foreach ($property_map as $property) {
-    if (isset($config[$property])) {
-        $worker->$property = $config[$property];
-    }
+$config = config('server');
+Worker::$pidFile = $config['pid_file'];
+Worker::$stdoutFile = $config['stdout_file'];
+Worker::$logFile = $config['log_file'];
+Worker::$eventLoopClass = $config['event_loop'] ?? '';
+TcpConnection::$defaultMaxPackageSize = $config['max_package_size'] ?? 10 * 1024 * 1024;
+if (property_exists(Worker::class, 'statusFile')) {
+    Worker::$statusFile = $config['status_file'] ?? '';
 }
 
-$worker->onWorkerStart = function ($worker) {
-    foreach (config('autoload.files', []) as $file) {
-        include_once $file;
-    }
-    Dotenv::createMutable(base_path())->load();
-    Config::reload(config_path(), ['route', 'container']);
-    foreach (config('bootstrap', []) as $class_name) {
-        /** @var \Webman\Bootstrap $class_name */
-        $class_name::start($worker);
-    }
-    $app = new App($worker, Container::instance(), Log::channel('default'), app_path(), public_path());
-    Route::load(config_path() . '/route.php');
-    Middleware::load(config('middleware', []));
-    Middleware::load(['__static__' => config('static.middleware', [])]);
-    Http::requestClass(Request::class);
-
-    $worker->onMessage = [$app, 'onMessage'];
-};
-
-
-foreach (config('process', []) as $process_name => $config) {
-    $worker = new Worker($config['listen'] ?? null, $config['context'] ?? []);
+if ($config['listen']) {
+    $worker = new Worker($config['listen'], $config['context']);
     $property_map = [
+        'name',
         'count',
         'user',
         'group',
-        'reloadable',
         'reusePort',
         'transport',
-        'protocol',
     ];
-    $worker->name = $process_name;
     foreach ($property_map as $property) {
         if (isset($config[$property])) {
             $worker->$property = $config[$property];
         }
     }
 
-    $worker->onWorkerStart = function ($worker) use ($config) {
-        foreach (config('autoload.files', []) as $file) {
-            include_once $file;
-        }
-        Dotenv::createMutable(base_path())->load();
-        Config::reload(config_path(), ['route']);
-
-        $bootstrap = $config['bootstrap'] ?? config('bootstrap', []);
-        if (!in_array(support\bootstrap\Log::class, $bootstrap)) {
-            $bootstrap[] = support\bootstrap\Log::class;
-        }
-        foreach ($bootstrap as $class_name) {
-            /** @var \Webman\Bootstrap $class_name */
-            $class_name::start($worker);
-        }
-
-        foreach ($config['services'] ?? [] as $server) {
-            if (!class_exists($server['handler'])) {
-                echo "process error: class {$config['handler']} not exists\r\n";
-                continue;
-            }
-            $listen = new Worker($server['listen'] ?? null, $server['context'] ?? []);
-            if (isset($server['listen'])) {
-                echo "listen: {$server['listen']}\n";
-            }
-            $class = Container::make($server['handler'], $server['constructor'] ?? []);
-            worker_bind($listen, $class);
-            $listen->listen();
-        }
-
-        if (isset($config['handler'])) {
-            if (!class_exists($config['handler'])) {
-                echo "process error: class {$config['handler']} not exists\r\n";
-                return;
-            }
-
-            $class = Container::make($config['handler'], $config['constructor'] ?? []);
-            worker_bind($worker, $class);
-        }
-
+    $worker->onWorkerStart = function ($worker) {
+        require_once base_path() . '/support/bootstrap.php';
+        $app = new App($worker, Container::instance(), Log::channel('default'), app_path(), public_path());
+        Http::requestClass(config('server.request_class') ?? Request::class);
+        $worker->onMessage = [$app, 'onMessage'];
     };
 }
 
+// Windows does not support custom processes.
+if (\DIRECTORY_SEPARATOR === '/') {
+    foreach (config('process', []) as $process_name => $config) {
+        worker_start($process_name, $config);
+    }
+    foreach (config('plugin', []) as $firm => $projects) {
+        foreach ($projects as $name => $project) {
+            foreach ($project['process'] ?? [] as $process_name => $config) {
+                worker_start("plugin.$firm.$name.$process_name", $config);
+            }
+        }
+    }
+}
 
 Worker::runAll();

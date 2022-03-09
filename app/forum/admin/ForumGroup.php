@@ -163,6 +163,28 @@ $indata["topic_num"]=intval($request->post("topic_num","0"));
         ];
 		return json($redata); 
     }
+    /*@@stat@@ */
+    public function stat(Request $request){
+        $fg=DBS::MM("forum","ForumGroup");
+        $ff=DBS::MM("forum","Forum");
+        $fc=DBS::MM("forum","ForumComment");
+        $groupList=$fg->Where("status",1)->get();
+        if(!empty($groupList)){
+            foreach($groupList as $g){
+                $fnum=$ff->WhereRaw("gid=".$g->gid." AND status in(0,1) ")->count();
+                $cnum=$fc->WhereRaw("gid=".$g->gid." AND status in(0,1) ")->count();
+                $fg->Where("gid",$g->gid)->update([
+                    "topic_num"=>$fnum,
+                    "comment_num"=>$cnum
+                ]);
+            }
+        }
+        $redata=[
+            "error" => 0, 
+            "message" => "success"
+        ];
+		return json($redata); 
+    }
       
 }
 

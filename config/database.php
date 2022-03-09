@@ -13,54 +13,54 @@
  */
 
 return [
+ // 默认数据库
+ 'default' => 'mysql',
+ // 各种数据库配置
+ 'connections' => [
 
-    'default' => 'mysql',
-	'fetch' => PDO::FETCH_ASSOC,
-    'connections' => [
-		
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'mmlang'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', 'root'),
-            'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix' => 'sky_',
-            'strict' => true,
-            'engine' => null,
-        ],
+     'mysql' => [
+         'driver'      => 'mysql',
+         'host'        => '127.0.0.1',
+         'port'        => 3306,
+         'database'    => 'mmlang',
+         'username'    => 'root',
+         'password'    => 'root',
+         'unix_socket' => '',
+         'charset'     => 'utf8',
+         'collation'   => 'utf8_unicode_ci',
+         'prefix'      => 'sky_',
+         'strict'      => true,
+         'engine'      => null,
+     ],
 
-        'sqlite' => [
-            'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', ''),
-            'prefix' => '',
-        ],
+     'sqlite' => [
+         'driver'   => 'sqlite',
+         'database' => '',
+         'prefix'   => '',
+     ],
 
-        'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'prefer',
-        ],
+     'pgsql' => [
+         'driver'   => 'pgsql',
+         'host'     => '127.0.0.1',
+         'port'     => 5432,
+         'database' => 'webman',
+         'username' => 'webman',
+         'password' => '',
+         'charset'  => 'utf8',
+         'prefix'   => '',
+         'schema'   => 'public',
+         'sslmode'  => 'prefer',
+     ],
 
-        'sqlsrv' => [
-            'driver' => 'sqlsrv',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-        ],
-    ],
+     'sqlsrv' => [
+         'driver'   => 'sqlsrv',
+         'host'     => 'localhost',
+         'port'     => 1433,
+         'database' => 'webman',
+         'username' => 'webman',
+         'password' => '',
+         'charset'  => 'utf8',
+         'prefix'   => '',
+     ],
+ ],
 ];
