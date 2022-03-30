@@ -31,7 +31,14 @@ class Category
             "rscount"=>$rscount
 
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -52,7 +59,14 @@ class Category
             "message" => "success",
             "data"=>$data 
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
     
 	
@@ -103,7 +117,14 @@ $indata["logo"]=$request->post("logo","");
             "message" => "保存成功",
             "insert_id"=>$catid
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@status@@*/
@@ -127,7 +148,14 @@ $indata["logo"]=$request->post("logo","");
             "message" => "success",
             "status"=>$status
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/
@@ -144,7 +172,14 @@ $indata["logo"]=$request->post("logo","");
             "error" => 0, 
             "message" => "success"
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
       
 }

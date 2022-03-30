@@ -32,7 +32,14 @@ class ForumComment
             "rscount"=>$rscount
 
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -61,7 +68,14 @@ class ForumComment
             "rscount"=>$rscount
 
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -82,7 +96,14 @@ class ForumComment
             "data"=>$data,
             "author"=>$author 
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
 
 	/*@@my@@*/    
@@ -116,7 +137,14 @@ class ForumComment
             "rscount"=>$rscount
 
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -146,7 +174,14 @@ class ForumComment
             "message" => "success",
             "data"=>$row 
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
     
 	
@@ -199,7 +234,14 @@ class ForumComment
             "message" => "保存成功",
             "insert_id"=>$id
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@status@@*/
@@ -232,7 +274,14 @@ class ForumComment
             "message" => "success",
             "status"=>$status
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/
@@ -258,7 +307,14 @@ class ForumComment
             "error" => 0, 
             "message" => "success"
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
       
 }

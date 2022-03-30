@@ -12,4 +12,12 @@
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-return [];
+return [ 
+    '' => [
+        //support\middleware\AuthCheckTest::class,
+        //support\middleware\AccessControlTest::class,
+        app\middleware\AccessControlTest::class,
+        app\middleware\AdminAccessMiddleware::class,
+        
+    ]
+];

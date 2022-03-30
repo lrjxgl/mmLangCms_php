@@ -33,7 +33,14 @@ class GoldLog
             "rscount"=>$rscount
 
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -63,7 +70,14 @@ class GoldLog
             "rscount"=>$rscount
 
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -84,7 +98,14 @@ class GoldLog
             "data"=>$data,
             "author"=>$author 
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
 
 	/*@@my@@*/    
@@ -119,7 +140,14 @@ class GoldLog
             "rscount"=>$rscount
 
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -149,7 +177,14 @@ class GoldLog
             "message" => "success",
             "data"=>$data 
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
     
 	
@@ -197,7 +232,14 @@ $indata["money"]=floatval($request->post("money","0"));
             "message" => "保存成功",
             "insert_id"=>$id
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/
@@ -223,7 +265,14 @@ $indata["money"]=floatval($request->post("money","0"));
             "error" => 0, 
             "message" => "success"
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
       
 }

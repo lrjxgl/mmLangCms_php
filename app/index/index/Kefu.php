@@ -46,7 +46,14 @@ class Kefu
             "rscount" => $rscount,
 
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@save@@*/
@@ -92,6 +99,13 @@ class Kefu
             "message" => "保存成功",
             "insert_id" => $id,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 }

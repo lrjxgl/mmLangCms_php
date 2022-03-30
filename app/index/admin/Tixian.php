@@ -33,7 +33,14 @@ class Tixian
             "rscount"=>$rscount
 
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -54,7 +61,14 @@ class Tixian
             "message" => "success",
             "data"=>$data 
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
     
 	
@@ -105,7 +119,14 @@ $indata["bankid"]=intval($request->post("bankid","0"));
             "message" => "保存成功",
             "insert_id"=>$id
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@status@@*/
@@ -129,7 +150,14 @@ $indata["bankid"]=intval($request->post("bankid","0"));
             "message" => "success",
             "status"=>$status
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/
@@ -146,7 +174,14 @@ $indata["bankid"]=intval($request->post("bankid","0"));
             "error" => 0, 
             "message" => "success"
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
       
 }

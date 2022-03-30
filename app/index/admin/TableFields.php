@@ -33,7 +33,14 @@ class TableFields
             "rscount"=>$rscount
 
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -54,7 +61,14 @@ class TableFields
             "message" => "success",
             "data"=>$data 
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
     
 	
@@ -97,7 +111,14 @@ $indata["optionlist"]=$request->post("optionlist","");
             "message" => "保存成功",
             "insert_id"=>$id
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@status@@*/
@@ -121,7 +142,14 @@ $indata["optionlist"]=$request->post("optionlist","");
             "message" => "success",
             "status"=>$status
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/
@@ -138,7 +166,14 @@ $indata["optionlist"]=$request->post("optionlist","");
             "error" => 0, 
             "message" => "success"
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
       
 }

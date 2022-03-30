@@ -13,7 +13,7 @@ class ForumHome{
         $ssuserid=UserAccess::checkAccess($request); 
         $userid=intval($request->get("userid"));   
         $user=DBS::MM("index","user")->get($userid,"userid,nickname,user_head,follow_num,followed_num,description");
-        if($userid!==ssuserid){
+        if($userid!=$ssuserid){
             $follow=DBS::MM("index","follow")->whereRaw("userid=".$ssuserid." AND t_userid=".$userid)->first();
             if($follow){
                 $user->isFollow=1;
@@ -35,7 +35,7 @@ class ForumHome{
         $rscount=$fm->whereRaw($where)->count();
         $per_page=$start+$limit;
         $per_page=$per_page>$rscount?0:$per_page;
-        $reData=[
+        $redata=[
             "error"=>0,
             "message"=>"success",
             "user"=>$user,
@@ -44,7 +44,14 @@ class ForumHome{
             "list"=>$list
 
         ];
-        return json($reData);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 }
 

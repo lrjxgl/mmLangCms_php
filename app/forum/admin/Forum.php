@@ -44,7 +44,14 @@ class Forum
             "rscount"=>$rscount
 
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -58,7 +65,14 @@ class Forum
             "message" => "ok",
             "data"=>$data 
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
     /*@@save@@*/
     public function save(Request $request){
@@ -71,7 +85,14 @@ class Forum
             "message" => "save ok",
             "insert_id"=>$id
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@status@@*/
     public function Status(Request $request){
@@ -92,7 +113,14 @@ class Forum
             "status"=>$status,
             "row"=>$row
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@recommend@@*/
@@ -114,7 +142,14 @@ class Forum
             "message" => "ok",
             "isrecommend"=>$isrecommend
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/
@@ -128,7 +163,14 @@ class Forum
             "error" => 0, 
             "message" => "ok"
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
       
 }

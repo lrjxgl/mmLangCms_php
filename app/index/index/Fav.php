@@ -40,7 +40,14 @@ class Fav
             "list"=>$list
 
         ]; 
-        return json($reData);
+        
+	$reJson=[
+		"data"=>$reData,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
 
     }
 	 /*@@get@@*/
@@ -68,7 +75,14 @@ class Fav
             "action"=>$action
 
         ];
-        return json($reData);
+        
+	$reJson=[
+		"data"=>$reData,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@toggle@@*/
     public function toggle(Request $request){
@@ -103,7 +117,14 @@ class Fav
             "action"=>$action
 
         ]; 
-        return json($reData);
+        
+	$reJson=[
+		"data"=>$reData,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     } 
  
       

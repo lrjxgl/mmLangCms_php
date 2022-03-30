@@ -9,7 +9,7 @@ class Oos{
         $name=str_replace(public_path()."/","",$from);
         $file = curl_file_create($from, 'image/jpeg',$name);
         $client = new Client();
-        
+         
         $response = $client->request('POST',self::$imgHost, [
             'multipart' => [
                 [

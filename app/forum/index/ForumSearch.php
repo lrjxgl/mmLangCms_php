@@ -31,13 +31,16 @@ class forumSearch{
         $per_page=$start+$limit;
         $per_page=$per_page>$rscount?0:$per_page;
         $redata=[
-            "error" => 0, 
-            "message" => "ok",
             "list"=>$list,
             "per_page"=>$per_page,
             "rscount"=>$rscount,
 
         ];
-		return json($redata);
+		$reJson=[
+            "data"=>$redata,
+            "error"=>0,
+            "message"=>"success"
+        ];
+        return json($reJson);
     }
 }

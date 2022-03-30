@@ -88,7 +88,14 @@ class Article
             "catList" => $catList,
 
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
 
     }
 
@@ -115,7 +122,14 @@ class Article
             "catList" => $catList,
             "imgList" => $imgList,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@save@@*/
@@ -181,7 +195,14 @@ class Article
             "message" => "保存成功",
             "insert_id" => $id,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@status@@*/
@@ -205,7 +226,14 @@ class Article
             "message" => "success",
             "status" => $status,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@recommend@@*/
@@ -230,7 +258,14 @@ class Article
             "message" => "success",
             "isrecommend" => $isrecommend,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/
@@ -247,7 +282,14 @@ class Article
             "error" => 0,
             "message" => "success",
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
 }

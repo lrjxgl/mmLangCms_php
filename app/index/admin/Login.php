@@ -24,9 +24,11 @@ class Login{
             return Help::success(0,"密码出错");
         }
         $token=AdminAccess::setToken($row->id,$row->password);
-        $token["error"]=0;
-        $token["message"]="登录成功";
-        return json($token);
+        $reJson=[];
+        $reJson["error"]=0;
+        $reJson["message"]="登录成功";
+        $reJson["data"]=$token;
+        return json($reJson);
     }
 
 }

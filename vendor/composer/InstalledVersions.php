@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e6b52a1a62d9e172b2f540bd4957915f101ec56e',
+    'reference' => 'cc975df130aac80913472b6c24113fe23325faa5',
     'name' => 'workerman/webman',
   ),
   'versions' => 
@@ -45,6 +45,24 @@ private static $installed = array (
       array (
       ),
       'reference' => '8b7ff3e4b7de6b2c84da85637b59fd2880ecaa89',
+    ),
+    'guzzlehttp/guzzle' => 
+    array (
+      'pretty_version' => '7.4.1',
+      'version' => '7.4.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ee0a041b1760e6a53d2a39c8c34115adc2af2c79',
+    ),
+    'guzzlehttp/promises' => 
+    array (
+      'pretty_version' => '1.5.1',
+      'version' => '1.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'fe752aedc9fd8fcca3fe7ad05d419d32998a06da',
     ),
     'guzzlehttp/psr7' => 
     array (
@@ -191,6 +209,22 @@ private static $installed = array (
       'reference' => '513e0666f7216c7459170d56df27dfcefe1689ea',
     ),
     'psr/container-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'psr/http-client' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
+    ),
+    'psr/http-client-implementation' => 
     array (
       'provided' => 
       array (
@@ -404,7 +438,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e6b52a1a62d9e172b2f540bd4957915f101ec56e',
+      'reference' => 'cc975df130aac80913472b6c24113fe23325faa5',
     ),
     'workerman/webman-framework' => 
     array (

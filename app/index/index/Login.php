@@ -116,7 +116,14 @@ class Login{
             "error" => 0, 
             "message" => "success",     
         ];
-		return json($redata);
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
 }

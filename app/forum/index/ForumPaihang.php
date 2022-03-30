@@ -18,6 +18,13 @@ class ForumPaihang{
             "wzList"=>$wzList,
             "fsList"=>$fsList
         ];
-        return json($reData);
+        
+	$reJson=[
+		"data"=>$reData,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 }

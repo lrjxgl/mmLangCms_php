@@ -45,7 +45,14 @@ class Ad
             "rscount" => $rscount,
 
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
 
     }
 
@@ -76,7 +83,14 @@ class Ad
             "tagList"=>$tagList,
             "tagList_2nd"=>$tagList_2nd   
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@getTags@@*/
     public function getTags(Request $request){
@@ -88,7 +102,14 @@ class Ad
             "message" => "success",
             "list"=>$list
         ];  
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@save@@*/
     public function save(Request $request)
@@ -133,7 +154,14 @@ class Ad
             "message" => "保存成功",
             "insert_id" => $id,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@status@@*/
@@ -157,7 +185,14 @@ class Ad
             "message" => "success",
             "status" => $status,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/
@@ -174,7 +209,14 @@ class Ad
             "error" => 0,
             "message" => "success",
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
 }

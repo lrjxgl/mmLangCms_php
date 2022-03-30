@@ -57,7 +57,7 @@ class Help{
             return $h."小时前";
         }else{
             $i=intval($ee/60);
-            $s=$ee-$s*60;
+            $s=$ee-$i*60;
             return $i."分".$s."秒";
         }
     }

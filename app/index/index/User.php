@@ -23,7 +23,14 @@ class User
             "message" => "success",  
             "user"=>$user
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -40,7 +47,14 @@ class User
             "message" => "success",  
             "user"=>$user
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     }
     /*@@info@@*/
     public function info(Request $request){
@@ -55,7 +69,14 @@ class User
             "message" => "success",  
             "user"=>$user
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     }  
     /*@@save@@*/
     public function save(Request $request){
@@ -71,7 +92,14 @@ class User
             "error" => 0, 
             "message" => "保存成功"
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@head@@*/
     public function head(Request $request){
@@ -86,7 +114,14 @@ class User
             "message" => "success",  
             "user"=>$user
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
     /*@@headsave@@*/
     public function headsave(Request $request){
@@ -102,7 +137,14 @@ class User
             "error" => 0, 
             "message" => "保存成功"
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     } 
     /*@@passwordSave@@*/
     public function passwordSave(Request $request){
@@ -130,7 +172,14 @@ class User
             "error" => 0, 
             "message" => "success"
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     }
     
     /*@@paypwdSave@@*/
@@ -160,7 +209,14 @@ class User
             "error" => 0, 
             "message" => "success"
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     }
      
     /*@@sendSms@@*/
@@ -205,7 +261,14 @@ class User
             "error" => 0, 
             "message" => "success",     
         ];
-		return json($redata);
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@telephoneSave@@*/
     public function telephonesave(Request $request){

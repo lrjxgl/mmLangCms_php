@@ -34,7 +34,14 @@ class Navbar
             "limit"=>$limit 
 
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
 
     }
     /*@@add@@*/
@@ -65,7 +72,14 @@ class Navbar
             "group_id" => $group_id,
             "pid" => $pid,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@save@@*/
     public function save(Request $request)
@@ -102,7 +116,14 @@ class Navbar
             "message" => "保存成功",
             "insert_id" => $id,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@status@@*/
     public function Status(Request $request)
@@ -124,7 +145,14 @@ class Navbar
             "status" => $status,
             "row" => $row,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@recommend@@*/
@@ -147,7 +175,14 @@ class Navbar
             "message" => "ok",
             "isrecommend" => $isrecommend,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/
@@ -162,7 +197,14 @@ class Navbar
             "error" => 0,
             "message" => "ok",
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@get@@*/
@@ -216,6 +258,13 @@ class Navbar
             "message" => "ok",
             "list" => $parent,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 }

@@ -24,7 +24,14 @@ class Forum
             "adList"=>$adList,
             "recList"=>$recList,
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
          
 		   
     }
@@ -67,7 +74,14 @@ class Forum
             "catList"=>$catList 
 
         ];
-		return json($redata);
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
      /*@@new@@*/
@@ -95,7 +109,14 @@ class Forum
             "per_page"=>$per_page,
             "rscount"=>$rscount
         ];
-		return json($redata);
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@show@@*/
     public function show(Request $request){
@@ -115,7 +136,14 @@ class Forum
             "data"=>$data,
             "author"=>$author 
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
      /*@@my@@*/
      public function my(Request $request){
@@ -147,7 +175,14 @@ class Forum
             
 
         ];
-		return json($redata);
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@add@@*/
@@ -158,6 +193,7 @@ class Forum
         }
         $id=intval($request->get("id"));
         $row=[]; 
+        $imgList=[];
         if($id){
             $fm=DBS::MM("forum","Forum");
             $row=$fm->find($id);
@@ -194,7 +230,14 @@ class Forum
             "data"=>$row,
             "imgList"=>$imgList 
         ];
-		return json($redata);       
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+      
     } 
     /*@@save@@*/
     public function save(Request $request){
@@ -256,7 +299,14 @@ class Forum
             "message" => "保存成功",
             "insert_id"=>$id
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@status@@*/
     public function Status(Request $request){
@@ -285,7 +335,14 @@ class Forum
             "status"=>$status,
             "row"=>$row
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@recommend@@*/
@@ -314,7 +371,14 @@ class Forum
             "message" => "ok",
             "isrecommend"=>$isrecommend
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/ 
@@ -338,7 +402,14 @@ class Forum
             "error" => 0, 
             "message" => "success"
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@user@@*/
@@ -360,7 +431,14 @@ class Forum
             "topic_num"=>$topic_num,
             "comment_num"=>$comment_num
         ];
-		return json($redata); 
+		
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@addclick@@ */

@@ -27,7 +27,7 @@ class Upload{
         if ($file && $file->isValid()) {
             $file->move( $rootFile);
             DBS::MM("index","attach")->add([
-                "url"=>$filename,
+                "url"=>$rootFile,
                 "userid"=>$ssuserid
             ]);
             //处理图片

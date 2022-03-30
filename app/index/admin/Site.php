@@ -18,7 +18,14 @@ class Site
             "message" => "success",
             "data" => $data,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@save@@*/
@@ -52,7 +59,14 @@ class Site
             "message" => "保存成功",
             "insert_id" => $siteid,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@status@@*/
@@ -76,7 +90,14 @@ class Site
             "message" => "success",
             "status" => $status,
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
     /*@@delete@@*/
@@ -93,7 +114,14 @@ class Site
             "error" => 0,
             "message" => "success",
         ];
-        return json($redata);
+        
+	$reJson=[
+		"data"=>$redata,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
 }

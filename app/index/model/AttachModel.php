@@ -29,8 +29,8 @@ class AttachModel extends Model{
 			}
 		}
 		return $reList;
-	}
-
+	} 
+ 
 	public function Add($ops){
 		if(!isset($ops["url"]) && empty($ops["url"]) && file_exists($ops["url"])){
 			return false;

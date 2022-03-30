@@ -40,7 +40,14 @@ class Follow
             "message"=>"success",
             "list"=>$list
         ];
-        return json($reData);
+        
+	$reJson=[
+		"data"=>$reData,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 
      /*
@@ -75,7 +82,14 @@ class Follow
             "message"=>"success",
             "list"=>$list
         ];
-        return json($reData);
+        
+	$reJson=[
+		"data"=>$reData,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
 	/*@@toggle@@*/    
     public function toggle(Request $request){
@@ -100,7 +114,14 @@ class Follow
             "message"=>"success",
             "isFollow"=>$isFollow
         ];
-        return json($reData);
+        
+	$reJson=[
+		"data"=>$reData,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
       
 }

@@ -34,7 +34,14 @@ class Love
             "action"=>$action
 
         ];
-        return json($reData);
+        
+	$reJson=[
+		"data"=>$reData,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     }
     /*@@toggle@@*/
     public function toggle(Request $request){
@@ -69,7 +76,14 @@ class Love
             "action"=>$action
 
         ];
-        return json($reData);
+        
+	$reJson=[
+		"data"=>$reData,
+		"error"=>0,
+		"message"=>"success"
+    ];
+	return json($reJson);
+
     } 
       
 }
