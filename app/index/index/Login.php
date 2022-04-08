@@ -25,9 +25,12 @@ class Login{
             return Help::success(1,"登录密码错误");
         }
         $token=UserAccess::setToken($user["userid"],$up["password"]);
-        $token["error"]=0;
-        $token["message"]="登录成功";
-        return json($token);
+        $reJson=[
+            "data"=>$token,
+            "error"=>0,
+            "message"=>"登录成功"
+        ];
+        return json($reJson);
         
 
     }
