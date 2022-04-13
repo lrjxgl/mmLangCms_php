@@ -1,5 +1,8 @@
 # mmLangCms_php
-基于webman框架实现mmLangCms的Api接口
+   基于webman框架实现mmLangCms的Api接口  
+    uniApp前端 https://github.com/lrjxgl/mmlangCms_forum  
+    uniApp后端 https://github.com/lrjxgl/mmlangCms_admin  
+    官网 https://www.deituicms.com
 
 ## 基础配置
    数据库 config/database.php /.env  
