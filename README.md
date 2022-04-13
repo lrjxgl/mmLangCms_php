@@ -1,25 +1,12 @@
 # mmLangCms_php
-   基于webman框架实现mmLangCms的Api接口  
+   基于webman框架实现mmLangCms的Api接口，目前实现论坛的基本功能仅供学习使用  
     uniApp前端 https://github.com/lrjxgl/mmlangCms_forum  
     uniApp后端 https://github.com/lrjxgl/mmlangCms_admin  
-    官网 https://www.deituicms.com
+    交流官网 https://www.deituicms.com  
+    演示地址： https://app.deituicms.com/bbs  
+    ![首页](https://shuxianglai.oss-cn-hangzhou.aliyuncs.com/attach/2022/03/30/356.jpg)
+    ![板块](https://shuxianglai.oss-cn-hangzhou.aliyuncs.com/attach/2022/03/30/353.jpg) 
+    ![个人主页](https://shuxianglai.oss-cn-hangzhou.aliyuncs.com/attach/2022/03/30/354.jpg) 
+    
 
-## 基础配置
-   数据库 config/database.php /.env  
-   文件地址 ext/Help.php  
-   远程文件 ext/Oos.php  
-# Api 列表 
-## 用户 
- /register 注册 完成    
- /login 登录  完成    
- /user 用户信息    
-## 论坛
-/forun/ 完成   
-/admin/forum/ 完成  
-
-## 后台  
- /admin/navbar 完成  
- /admin/admin/ 管理员管理完成  
- /admin/article/ 文章管理完成  
- /admin/category/ 文章分类管理完成  
  
