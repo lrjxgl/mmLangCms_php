@@ -1,5 +1,5 @@
 # mmLangCms_php
-   基于webman框架实现mmLangCms的Api接口，目前实现论坛的基本功能仅供学习使用  
+   基于PHP webman框架实现mmLangCms的Api接口，目前实现论坛的基本功能仅供学习使用  
     uniApp前端 https://github.com/lrjxgl/mmlangCms_forum  
     uniApp后端 https://github.com/lrjxgl/mmlangCms_admin  
    交流官网 https://www.deituicms.com  
